@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+
+  <meta>
+    <title>Site web Recover'n Health</title>
+    <client>Massothérapeute indépendant</taught>
+    <instagram>https://www.instagram.com/recover_n_health/</instagram>
+    <date>2026-03-09</date>
+    <version>1.0</version>
+  </meta>
+
+  <context>
+    <problem>Le client fait 1 à 2 massages par mois seulement. Il manque de clients réguliers et n'a aucune présence web en dehors d'Instagram.</problem>
+    <current_presence>
+      <channel type="instagram" url="https://www.instagram.com/recover_n_health/" active="true"/>
+      <channel type="website" active="false"/>
+    </current_presence>
+    <business_model>Massothérapeute se déplaçant exclusivement à domicile chez ses clients</business_model>
+    <goal>Augmenter le nombre de clients réguliers grâce à un site vitrine avec prise de rendez-vous en ligne</goal>
+  </context>
+
+  <website>
+
+    <objectives>
+      <objective priority="1">Permettre aux visiteurs de prendre rendez-vous en ligne facilement</objective>
+      <objective priority="2">Présenter les prestations de massage disponibles</objective>
+      <objective priority="3">Présenter les formations de massage proposées</objective>
+      <objective priority="4">Inspirer confiance et professionnalisme</objective>
+      <objective priority="5">Convertir les visiteurs Instagram en clients réguliers</objective>
+    </objectives>
+
+    <pages>
+      <page id="home" name="Accueil">
+        <description>Page principale avec accroche forte, présentation rapide des services et appel à l'action vers la prise de RDV</description>
+        <required_elements>
+          <element>Titre accrocheur mettant en avant le service à domicile</element>
+          <element>Bouton de prise de rendez-vous visible et accessible</element>
+          <element>Résumé des prestations principales</element>
+          <element>Lien vers le compte Instagram</element>
+        </required_elements>
+      </page>
+      <page id="services" name="Soins / Prestations">
+        <description>Liste détaillée des types de massages proposés avec description, durée et tarif</description>
+        <required_elements>
+          <element>Nom et description de chaque soin</element>
+          <element>Durée de chaque soin</element>
+          <element>Tarif de chaque soin</element>
+          <element>Bouton de réservation par soin</element>
+        </required_elements>
+      </page>
+      <page id="training" name="Formations">
+        <description>Présentation des formations de massage proposées aux particuliers et professionnels</description>
+        <required_elements>
+          <element>Description de la ou des formations disponibles</element>
+          <element>Public visé (particuliers, professionnels, reconversion)</element>
+          <element>Modalités (durée, format, groupe ou individuel)</element>
+          <element>Formulaire de demande d'informations</element>
+        </required_elements>
+      </page>
+      <page id="about" name="À propos">
+        <description>Présentation du praticien, son parcours, ses certifications et sa philosophie de soin</description>
+        <required_elements>
+          <element>Photo du praticien</element>
+          <element>Histoire et parcours</element>
+          <element>Certifications et formations</element>
+          <element>Philosophie et valeurs</element>
+        </required_elements>
+      </page>
+      <page id="booking" name="Prise de RDV / Contact">
+        <description>Page dédiée à la réservation en ligne et au contact</description>
+        <required_elements>
+          <element>Système de calendrier de réservation en ligne (Cal.com ou Calendly)</element>
+          <element>Formulaire de contact alternatif</element>
+          <element>Zone géographique d'intervention</element>
+          <element>Délai de réponse indiqué</element>
+        </required_elements>
+      </page>
+    </pages>
+
+    <design>
+      <style>Zen naturel — fusion antillaise et japonaise</style>
+      <mood>Apaisant, élégant, naturel, dépaysant</mood>
+      <color_palette>
+        <color role="primary" name="Vert émeraude" hex="#2D6A4F"/>
+        <color role="secondary" name="Bleu zen japonais" hex="#1B4965"/>
+        <color role="accent" name="Or doux" hex="#C9A96E"/>
+        <color role="background" name="Blanc bambou crème" hex="#FDFAF5"/>
+        <color role="text" name="Vert profond" hex="#1A3A2A"/>
+      </color_palette>
+      <typography>
+        <font role="heading" suggestion="Cormorant Garamond ou similaire — serif élégant"/>
+        <font role="body" suggestion="Zen Kaku Gothic New ou similaire — léger et lisible"/>
+        <font role="accent" suggestion="Dancing Script ou similaire — manuscrit chaleureux"/>
+      </typography>
+      <visual_references>
+        <reference>Bambou — lignes verticales, nœuds, texture naturelle</reference>
+        <reference>Hibiscus — fleur antillaise, couleurs chaudes, exotisme</reference>
+        <reference>Flamboyant — arbre emblématique des Antilles</reference>
+        <reference>Cercle zen japonais (Enso) — sérénité, complétude</reference>
+        <reference>Idéogrammes japonais — décoration discrète, esprit zen</reference>
+      </visual_references>
+      <tone>Chaleureux, professionnel, ressourçant. Ni trop clinique ni trop touristique.</tone>
+    </design>
+
+    <technical>
+      <cms>WordPress</cms>
+      <page_builder>Kadence ou Elementor (au choix)</page_builder>
+      <hosting>o2switch ou Hetzner VPS</hosting>
+      <booking_system>
+        <tool preferred="Cal.com (self-hosted)" alternative="Calendly (version gratuite)"/>
+        <feature>Réservation en ligne 24h/24</feature>
+        <feature>Rappel automatique par email avant le RDV</feature>
+        <feature>Confirmation automatique par email</feature>
+      </booking_system>
+      <contact_form>WPForms ou Contact Form 7</contact_form>
+      <seo_basics>
+        <item>Balises title et meta description par page</item>
+        <item>Optimisation pour recherche locale (massothérapeute à domicile + ville)</item>
+        <item>Intégration Google My Business recommandée</item>
+      </seo_basics>
+      <mobile>Responsive obligatoire — priorité mobile</mobile>
+      <performance>Temps de chargement inférieur à 3 secondes</performance>
+    </technical>
+
+    <content_to_collect>
+      <item required="true">Logo ou charte graphique existante</item>
+      <item required="true">Photo professionnelle du praticien</item>
+      <item required="true">Liste complète des soins avec descriptions, durées et tarifs</item>
+      <item required="true">Zone géographique d'intervention</item>
+      <item required="true">Numéro de téléphone et email de contact</item>
+      <item required="true">Description des formations proposées</item>
+      <item required="false">Photos d'ambiance ou de séances (anonymisées)</item>
+      <item required="false">Avis clients existants</item>
+      <item required="false">Certifications et diplômes à afficher</item>
+    </content_to_collect>
+
+    <automation_phase2>
+      <description>Automatisations à mettre en place après la mise en ligne du site, via N8N</description>
+      <workflow id="1" priority="high">
+        <name>Rappel RDV automatique</name>
+        <trigger>48h avant le rendez-vous confirmé dans Cal.com</trigger>
+        <action>Envoi d'un email et/ou SMS de rappel au client</action>
+      </workflow>
+      <workflow id="2" priority="high">
+        <name>Email post-séance</name>
+        <trigger>3 jours après un rendez-vous complété</trigger>
+        <action>Email de suivi personnalisé avec conseils post-massage et invitation à rebooker</action>
+      </workflow>
+      <workflow id="3" priority="medium">
+        <name>Relance clients inactifs</name>
+        <trigger>60 jours sans nouveau rendez-vous</trigger>
+        <action>Email de relance doux avec offre de retour ou nouveauté</action>
+      </workflow>
+      <workflow id="4" priority="low">
+        <name>Demande d'avis</name>
+        <trigger>7 jours après un rendez-vous complété</trigger>
+        <action>Email demandant un avis Google ou Instagram</action>
+      </workflow>
+    </automation_phase2>
+
+  </website>
+
+  <deliverables>
+    <deliverable id="1" phase="1">Site WordPress en ligne avec les 5 pages</deliverable>
+    <deliverable id="2" phase="1">Système de réservation Cal.com intégré</deliverable>
+    <deliverable id="3" phase="1">Formulaire de contact opérationnel</deliverable>
+    <deliverable id="4" phase="1">Configuration DNS et mise en ligne</deliverable>
+    <deliverable id="5" phase="1">Formation rapide du client à la gestion de son agenda</deliverable>
+    <deliverable id="6" phase="2">Workflows N8N de rappel et fidélisation</deliverable>
+  </deliverables>
+
+  <timeline>
+    <milestone week="1" label="Setup hébergement, WordPress, récupération des contenus"/>
+    <milestone week="2" label="Construction des pages, intégration Cal.com, formulaire"/>
+    <milestone week="3" label="Révision client, corrections, mise en ligne"/>
+    <milestone week="4-12" label="Mise en place des automatisations N8N (phase 2)"/>
+  </timeline>
+
+  <commercial>
+    <setup_fee currency="EUR">0</setup_fee>
+    <setup_fee_note>Premier client — investissement formation, pas de facturation setup</setup_fee_note>
+    <monthly_fee currency="EUR">100-150</monthly_fee>
+    <monthly_fee_includes>Hébergement, maintenance, mises à jour, support</monthly_fee_includes>
+    <reference_rights>Le praticien autorise l'utilisation du site comme référence portfolio (à confirmer par écrit)</reference_rights>
+  </commercial>
+
+</project>
