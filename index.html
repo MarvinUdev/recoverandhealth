@@ -21,6 +21,10 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Dancing+Script:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
     <style>
       /* ==================== RESET & BASE ==================== */
       *,
@@ -119,6 +123,13 @@
         font-family: "Dancing Script", cursive;
         font-size: 0.9rem;
         color: var(--gold);
+      }
+      .nav-logo-massage {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: contain;
+        vertical-align: middle;
       }
       .nav-links {
         display: flex;
@@ -621,6 +632,31 @@
         font-size: 2.4rem;
         margin-bottom: 20px;
         display: block;
+        color: var(--green);
+      }
+      .service-icon i {
+        color: var(--green);
+      }
+      .service-item-body h3 i {
+        color: var(--green);
+        margin-right: 10px;
+        font-size: 1.1em;
+        vertical-align: middle;
+      }
+      .formation-card-header h3 i {
+        margin-right: 10px;
+      }
+      .value-card .icon i {
+        color: var(--gold);
+      }
+      .info-item .icon i {
+        color: var(--gold);
+      }
+      .service-note-icon i {
+        color: var(--gold);
+      }
+      .formation-feature .icon i {
+        color: var(--green);
       }
       .service-card h3 {
         font-family: "Cormorant Garamond", serif;
@@ -1037,6 +1073,12 @@
       .about-img-placeholder svg {
         width: 48px;
         opacity: 0.4;
+      }
+      .about-img-real {
+        width: 100%;
+        height: auto;
+        border-radius: 24px;
+        display: block;
       }
       .about-enso {
         position: absolute;
@@ -1715,7 +1757,7 @@
         max-height: 88vh;
         display: flex;
         flex-direction: column;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
         overflow: hidden;
       }
       .legal-modal-header {
@@ -1723,7 +1765,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 24px 32px;
-        border-bottom: 1px solid rgba(45,106,79,0.12);
+        border-bottom: 1px solid rgba(45, 106, 79, 0.12);
         background: #fff;
         flex-shrink: 0;
       }
@@ -1745,7 +1787,7 @@
         transition: background 0.15s;
       }
       .legal-modal-close:hover {
-        background: rgba(45,106,79,0.08);
+        background: rgba(45, 106, 79, 0.08);
         color: var(--dark);
       }
       .legal-modal-body {
@@ -1762,7 +1804,7 @@
         color: var(--green);
         margin: 28px 0 8px;
         padding-bottom: 6px;
-        border-bottom: 1px solid rgba(45,106,79,0.12);
+        border-bottom: 1px solid rgba(45, 106, 79, 0.12);
       }
       .legal-modal-body h3:first-child {
         margin-top: 0;
@@ -1779,7 +1821,7 @@
         margin-bottom: 5px;
       }
       .legal-modal-body .legal-placeholder {
-        background: rgba(201,169,110,0.15);
+        background: rgba(201, 169, 110, 0.15);
         border: 1px dashed var(--gold);
         border-radius: 4px;
         padding: 2px 8px;
@@ -1789,7 +1831,7 @@
       }
       .legal-modal-footer {
         padding: 16px 32px;
-        border-top: 1px solid rgba(45,106,79,0.1);
+        border-top: 1px solid rgba(45, 106, 79, 0.1);
         background: #fff;
         text-align: center;
         font-size: 0.78rem;
@@ -1797,9 +1839,15 @@
         flex-shrink: 0;
       }
       @media (max-width: 768px) {
-        .legal-modal-header { padding: 18px 20px; }
-        .legal-modal-body   { padding: 20px; }
-        .legal-modal-footer { padding: 14px 20px; }
+        .legal-modal-header {
+          padding: 18px 20px;
+        }
+        .legal-modal-body {
+          padding: 20px;
+        }
+        .legal-modal-footer {
+          padding: 14px 20px;
+        }
       }
     </style>
   </head>
@@ -1821,13 +1869,14 @@
     <!-- Mockup label -->
     <!-- ===== NAVIGATION ===== -->
     <nav>
-      <a class="nav-logo" href="#home" onclick="event.preventDefault();showPage('home')">
-        <img
-          class="nav-logo-img"
-          src="assets/Recover'N Health logo PNG.png"
-          alt="Logo Recover'N Health"
-          onerror="this.style.display = 'none'"
-        />
+      <a
+        class="nav-logo"
+        href="#home"
+        onclick="
+          event.preventDefault();
+          showPage('home');
+        "
+      >
         <div class="nav-logo-text">
           Recover'N Health
           <span>Massothérapie à domicile</span>
@@ -1837,7 +1886,11 @@
         <li>
           <a
             href="#home"
-            onclick="event.preventDefault();showPage('home');closeMenu();"
+            onclick="
+              event.preventDefault();
+              showPage('home');
+              closeMenu();
+            "
             id="nav-home"
             class="active"
             >Accueil</a
@@ -1846,7 +1899,11 @@
         <li>
           <a
             href="#services"
-            onclick="event.preventDefault();showPage('services');closeMenu();"
+            onclick="
+              event.preventDefault();
+              showPage('services');
+              closeMenu();
+            "
             id="nav-services"
             >Soins</a
           >
@@ -1854,7 +1911,11 @@
         <li>
           <a
             href="#training"
-            onclick="event.preventDefault();showPage('training');closeMenu();"
+            onclick="
+              event.preventDefault();
+              showPage('training');
+              closeMenu();
+            "
             id="nav-training"
             >Formations</a
           >
@@ -1862,7 +1923,11 @@
         <li>
           <a
             href="#about"
-            onclick="event.preventDefault();showPage('about');closeMenu();"
+            onclick="
+              event.preventDefault();
+              showPage('about');
+              closeMenu();
+            "
             id="nav-about"
             >À propos</a
           >
@@ -1870,7 +1935,11 @@
         <li>
           <a
             href="#booking"
-            onclick="event.preventDefault();showPage('booking');closeMenu();"
+            onclick="
+              event.preventDefault();
+              showPage('booking');
+              closeMenu();
+            "
             id="nav-booking"
             class="nav-cta"
             >Prendre RDV</a
@@ -1986,7 +2055,7 @@
               </div>
             </div>
             <button class="hero-card-cta" onclick="showPage('booking')">
-              📅 Prendre rendez-vous
+              <i class="fa-solid fa-calendar-plus"></i> Prendre rendez-vous
             </button>
           </div>
         </div>
@@ -2026,8 +2095,14 @@
         </div>
         <div class="services-teaser-grid">
           <div class="service-card" onclick="showPage('services')">
-            <span class="service-icon">🌿</span>
-            <h3>Massages aux huiles</h3>
+            <span class="service-icon">
+              <img
+                class="nav-logo-massage"
+                src="assets/M5C_Logo.png"
+                alt="Logo Recover'N Health"
+                onerror="this.style.display = 'none'"
+            /></span>
+            <h3>Massages des 5 continents</h3>
             <p>
               Huiles essentielles ou végétales pour une détente complète du
               corps et de l'esprit.
@@ -2035,7 +2110,9 @@
             <span class="service-tag">dès 75€ · 1h</span>
           </div>
           <div class="service-card" onclick="showPage('services')">
-            <span class="service-icon">⚡</span>
+            <span class="service-icon"
+              ><i class="fa-solid fa-person-running"></i
+            ></span>
             <h3>Massage sportif</h3>
             <p>
               Récupération musculaire, préparation à l'effort, traitement des
@@ -2044,7 +2121,9 @@
             <span class="service-tag">70€ · 1h</span>
           </div>
           <div class="service-card" onclick="showPage('services')">
-            <span class="service-icon">🌊</span>
+            <span class="service-icon"
+              ><i class="fa-solid fa-droplet"></i
+            ></span>
             <h3>Drainage lymphatique</h3>
             <p>
               Stimulez la circulation, réduisez les gonflements et améliorez
@@ -2053,7 +2132,9 @@
             <span class="service-tag">85€ · 1h</span>
           </div>
           <div class="service-card" onclick="showPage('services')">
-            <span class="service-icon">🦶</span>
+            <span class="service-icon"
+              ><i class="fa-solid fa-shoe-prints"></i
+            ></span>
             <h3>Réflexologie plantaire</h3>
             <p>
               Agir sur l'ensemble du corps par les pieds — soulagement et
@@ -2062,16 +2143,9 @@
             <span class="service-tag">70€ · 45min</span>
           </div>
           <div class="service-card" onclick="showPage('services')">
-            <span class="service-icon">🧠</span>
-            <h3>Massage crânien</h3>
-            <p>
-              Libérez les tensions de la tête, nuque et épaules — idéal contre
-              le stress et les migraines.
-            </p>
-            <span class="service-tag">70€ · 1h</span>
-          </div>
-          <div class="service-card" onclick="showPage('services')">
-            <span class="service-icon">🏖️</span>
+            <span class="service-icon"
+              ><i class="fa-solid fa-umbrella-beach"></i
+            ></span>
             <h3>Massage extérieur</h3>
             <p>
               Une expérience unique en plein air — plage, rivière ou jardin —
@@ -2111,15 +2185,6 @@
             </p>
             <div class="testi-author">— Thomas K., Castelnau-le-Lez</div>
           </div>
-          <div class="testi-card">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-text">
-              Le massage extérieur au bord de l'eau était magique. Une
-              combinaison de techniques zen et antillaises qui m'a totalement
-              régénérée. À refaire !
-            </p>
-            <div class="testi-author">— Lucie M., Montpellier</div>
-          </div>
         </div>
       </section>
 
@@ -2149,7 +2214,7 @@
             src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d46221.29399915974!2d3.832969901391485!3d43.610062899292956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e0!4m3!3m2!1d43.6108708!2d3.8762285999999997!4m5!1s0x12b6af0725dd9db1%3A0xad8756742894e802!2sMontpellier!3m2!1d43.6108535!2d3.8761322999999996!5e0!3m2!1sfr!2sfr!4v1773781060232!5m2!1sfr!2sfr"
             width="100%"
             height="100%"
-            style="border:0; display:block;"
+            style="border: 0; display: block"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -2193,9 +2258,19 @@
           <div class="footer-section">
             <h4>Contact</h4>
             <ul>
-              <li><a>📍 Montpellier & alentours</a></li>
-              <li><a>📞 [Numéro à renseigner]</a></li>
-              <li><a>✉️ [Email à renseigner]</a></li>
+              <li>
+                <a
+                  ><i class="fa-solid fa-location-dot"></i> Montpellier &
+                  alentours</a
+                >
+              </li>
+              <li><a>📞 06 41 48 66 68</a></li>
+              <li>
+                <a
+                  ><i class="fa-solid fa-envelope"></i>
+                  ferrer.keryann@gmail.com</a
+                >
+              </li>
               <li><a>⏰ Disponible 7j/7</a></li>
             </ul>
           </div>
@@ -2203,9 +2278,29 @@
         <div class="footer-bottom">
           <span>© 2026 Recover'N Health — Tous droits réservés</span>
           <span>
-            <a onclick="openLegalModal('mentions')" href="#mentions-legales" style="color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Mentions légales</a>
+            <a
+              onclick="openLegalModal('mentions')"
+              href="#mentions-legales"
+              style="
+                color: inherit;
+                cursor: pointer;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+              "
+              >Mentions légales</a
+            >
             ·
-            <a onclick="openLegalModal('confidentialite')" href="#politique-confidentialite" style="color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Politique de confidentialité</a>
+            <a
+              onclick="openLegalModal('confidentialite')"
+              href="#politique-confidentialite"
+              style="
+                color: inherit;
+                cursor: pointer;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+              "
+              >Politique de confidentialité</a
+            >
           </span>
         </div>
       </footer>
@@ -2228,17 +2323,46 @@
 
       <section class="services-page">
         <div class="services-list">
-          <!-- Massage Huiles Essentielles -->
+          <!-- Massage des 5 continents -->
           <div class="service-item">
             <div class="service-item-body">
-              <h3>🌸 Massage aux huiles essentielles</h3>
+              <h3>
+                <img
+                  class="nav-logo-massage"
+                  src="assets/M5C_Logo.png"
+                  alt="Logo Recover'N Health"
+                  onerror="this.style.display = 'none'"
+                />Massothérapie / Massage des 5 continents
+              </h3>
+              <p style="margin-bottom: 6px">
+                <strong>Huiles essentielles :</strong> 85€ &nbsp;·&nbsp;
+                <strong>Huiles végétales :</strong> 75€
+              </p>
+              <p style="margin-bottom: 8px">
+                Un voyage sensoriel à travers les techniques des 5 continents :
+              </p>
+              <div
+                style="
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 6px;
+                  margin-bottom: 10px;
+                "
+              >
+                <span class="meta-pill">LOMI LOMI</span>
+                <span class="meta-pill">CALIFORNIEN</span>
+                <span class="meta-pill">SUÉDOIS</span>
+                <span class="meta-pill">AYURVÉDIQUE</span>
+                <span class="meta-pill">TUINA</span>
+              </div>
               <p>
-                Un voyage sensoriel intense grâce aux propriétés thérapeutiques
-                des huiles essentielles. Relaxation profonde, action sur les
-                tensions musculaires et équilibre émotionnel.
+                Associant l'énergie du Reiki/magnétisme et les huiles
+                essentielles.
               </p>
               <div class="service-meta">
-                <span class="meta-pill">⏱ 1h30</span>
+                <span class="meta-pill"
+                  ><i class="fa-regular fa-clock"></i>1h30</span
+                >
                 <span class="meta-pill">Tout public</span>
                 <span class="meta-pill">Relaxation & bien-être</span>
               </div>
@@ -2253,37 +2377,7 @@
               </div>
             </div>
             <div class="service-price-block">
-              <div class="service-price">85€</div>
-              <span class="service-price-unit">la séance</span>
-            </div>
-          </div>
-
-          <!-- Massage Huiles Végétales -->
-          <div class="service-item">
-            <div class="service-item-body">
-              <h3>🌿 Massage aux huiles végétales</h3>
-              <p>
-                Douceur et nutrition de la peau grâce aux huiles végétales bio.
-                Un massage enveloppant et nourrissant, idéal pour les peaux
-                sensibles et la relaxation totale.
-              </p>
-              <div class="service-meta">
-                <span class="meta-pill">⏱ 1h30</span>
-                <span class="meta-pill">Peaux sensibles</span>
-                <span class="meta-pill">Relaxation</span>
-              </div>
-              <div class="mt-4">
-                <button
-                  class="btn btn-outline"
-                  onclick="showPage('booking')"
-                  style="padding: 8px 20px; font-size: 0.8rem"
-                >
-                  Réserver
-                </button>
-              </div>
-            </div>
-            <div class="service-price-block">
-              <div class="service-price">75€</div>
+              <div class="service-price">à partir de 75€</div>
               <span class="service-price-unit">la séance</span>
             </div>
           </div>
@@ -2291,14 +2385,22 @@
           <!-- Massage Sportif -->
           <div class="service-item">
             <div class="service-item-body">
-              <h3>⚡ Massage sportif</h3>
+              <h3>
+                <i class="fa-solid fa-person-running"></i> Massage sportif
+              </h3>
+              <p style="margin-bottom: 6px">
+                <strong>Huiles essentielles :</strong> 75€ &nbsp;·&nbsp;
+                <strong>Huiles végétales :</strong> 70€
+              </p>
               <p>
-                Conçu pour les sportifs et les actifs. Prépare les muscles avant
-                l'effort ou accélère la récupération après. Libère les tensions
-                profondes et les contractures.
+                Conçu pour les sportifs et les actifs. Préparation Pré et Post
+                compétition et/ou entrainement. Libère les tensions profondes et
+                les contractures pour une meilleure récupération.
               </p>
               <div class="service-meta">
-                <span class="meta-pill">⏱ 1h</span>
+                <span class="meta-pill"
+                  ><i class="fa-regular fa-clock"></i>1h</span
+                >
                 <span class="meta-pill">Sportifs</span>
                 <span class="meta-pill">Récupération</span>
               </div>
@@ -2313,23 +2415,29 @@
               </div>
             </div>
             <div class="service-price-block">
-              <div class="service-price">70€</div>
-              <span class="service-price-unit">la séance</span>
+              <div class="service-price">à partir de 70€</div>
+              <span class="service-price-unit">la séance · 1h</span>
             </div>
           </div>
 
           <!-- Réflexologie plantaire -->
           <div class="service-item">
             <div class="service-item-body">
-              <h3>🦶 Réflexologie plantaire</h3>
+              <h3>
+                <i class="fa-solid fa-shoe-prints"></i> Réflexologie plantaire
+              </h3>
               <p>
                 Par la stimulation de points réflexes sous la plante des pieds,
                 agissez sur l'ensemble de vos organes et systèmes. Rééquilibrage
                 global, soulagement des tensions.
               </p>
               <div class="service-meta">
-                <span class="meta-pill">⏱ 45min</span>
-                <span class="meta-pill">⏱ 1h</span>
+                <span class="meta-pill"
+                  ><i class="fa-regular fa-clock"></i>45min</span
+                >
+                <span class="meta-pill"
+                  ><i class="fa-regular fa-clock"></i>1h</span
+                >
                 <span class="meta-pill">Rééquilibrage</span>
               </div>
               <div class="mt-4">
@@ -2348,47 +2456,20 @@
             </div>
           </div>
 
-          <!-- Massage Crânien -->
-          <div class="service-item">
-            <div class="service-item-body">
-              <h3>🧠 Massage crânien</h3>
-              <p>
-                Concentré sur la tête, la nuque et les épaules. Efficace contre
-                les maux de tête, le stress accumulé et les tensions cervicales.
-                Un soin très demandé par les actifs.
-              </p>
-              <div class="service-meta">
-                <span class="meta-pill">⏱ 1h</span>
-                <span class="meta-pill">Anti-stress</span>
-                <span class="meta-pill">Migraines</span>
-              </div>
-              <div class="mt-4">
-                <button
-                  class="btn btn-outline"
-                  onclick="showPage('booking')"
-                  style="padding: 8px 20px; font-size: 0.8rem"
-                >
-                  Réserver
-                </button>
-              </div>
-            </div>
-            <div class="service-price-block">
-              <div class="service-price">70€</div>
-              <span class="service-price-unit">la séance</span>
-            </div>
-          </div>
-
           <!-- Drainage Lymphatique -->
           <div class="service-item">
             <div class="service-item-body">
-              <h3>🌊 Drainage lymphatique</h3>
+              <h3><i class="fa-solid fa-droplet"></i> Drainage lymphatique</h3>
               <p>
                 Technique manuelle douce qui stimule le système lymphatique.
-                Réduit les œdèmes, améliore la circulation, renforce l'immunité
-                et procure une légèreté immédiate.
+                Soulage la rétention d'eau, réduit les œdèmes, améliore la
+                circulation, renforce l'immunité et procure une légèreté
+                immédiate.
               </p>
               <div class="service-meta">
-                <span class="meta-pill">⏱ 1h</span>
+                <span class="meta-pill"
+                  ><i class="fa-regular fa-clock"></i>1h</span
+                >
                 <span class="meta-pill">Œdèmes</span>
                 <span class="meta-pill">Immunité</span>
               </div>
@@ -2432,7 +2513,7 @@
               </div>
             </div>
             <div class="service-price-block">
-              <div class="service-price">14€</div>
+              <div class="service-price">2€</div>
               <span class="service-price-unit">/ minute</span>
             </div>
           </div>
@@ -2442,14 +2523,16 @@
             <div class="service-item-body">
               <h3>⚙️ Massage &amp; électrostimulation</h3>
               <p>
-                Alliance du massage manuel et de l'électrostimulation pour une
-                action renforcée sur les muscles profonds. Récupération
-                accélérée, tonus musculaire amélioré.
+                Alliance du massage manuel et de l'électrostimulation
+                (micro-courant) avec des programmes orientés santé. Récupération
+                accélérée, tonus musculaire amélioré, traitement de la
+                dépression, des douleurs chroniques, migraines, soins d'organes
+                spécifiques et plus encore.
               </p>
               <div class="service-meta">
-                <span class="meta-pill">⏱ 20min</span>
-                <span class="meta-pill">⏱ 1h</span>
-                <span class="meta-pill">Tonification</span>
+                <span class="meta-pill">Micro-courant Healy</span>
+                <span class="meta-pill">Récupération</span>
+                <span class="meta-pill">Bien-être</span>
               </div>
               <div class="mt-4">
                 <button
@@ -2462,22 +2545,27 @@
               </div>
             </div>
             <div class="service-price-block">
-              <div class="service-price">40€</div>
-              <span class="service-price-unit">20min · 1h sur devis</span>
+              <div class="service-price">Prix massage + 10 ou 20€</div>
+              <span class="service-price-unit">selon le programme Healy</span>
             </div>
           </div>
 
           <!-- Massage Extérieur -->
           <div class="service-item full-width">
             <div class="service-item-body">
-              <h3>🏖️ Massage extérieur (plage / rivière)</h3>
+              <h3>
+                <i class="fa-solid fa-umbrella-beach"></i> Massage extérieur
+                (plage / rivière)
+              </h3>
               <p>
                 Une expérience unique et dépaysante. Recevez votre soin en plein
                 air, face à la mer ou au bord d'un cours d'eau. L'alliance de la
                 nature et du massage pour une régénération complète.
               </p>
               <div class="service-meta">
-                <span class="meta-pill">⏱ 2h</span>
+                <span class="meta-pill"
+                  ><i class="fa-regular fa-clock"></i>2h</span
+                >
                 <span class="meta-pill">En plein air</span>
                 <span class="meta-pill">Expérience unique</span>
                 <span class="meta-pill">Plage · Rivière</span>
@@ -2500,7 +2588,9 @@
         </div>
 
         <div class="service-note">
-          <div class="service-note-icon">📍</div>
+          <div class="service-note-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
           <p>
             Tous les massages sont réalisés
             <strong>à domicile, sur rendez-vous</strong>. Prévoir
@@ -2525,6 +2615,18 @@
               Massothérapie professionnelle à domicile. Des soins sur-mesure
               inspirés des traditions antillaises et japonaises.
             </p>
+            <a
+              href="https://www.instagram.com/recover_n_health/"
+              class="insta-link"
+              target="_blank"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                />
+              </svg>
+              @recover_n_health
+            </a>
           </div>
           <div class="footer-section">
             <h4>Navigation</h4>
@@ -2539,18 +2641,48 @@
           <div class="footer-section">
             <h4>Contact</h4>
             <ul>
-              <li><a>📍 Montpellier & alentours</a></li>
-              <li><a>📞 [Numéro à renseigner]</a></li>
-              <li><a>✉️ [Email à renseigner]</a></li>
+              <li>
+                <a
+                  ><i class="fa-solid fa-location-dot"></i> Montpellier &
+                  alentours</a
+                >
+              </li>
+              <li><a>📞 06 41 48 66 68</a></li>
+              <li>
+                <a
+                  ><i class="fa-solid fa-envelope"></i>
+                  ferrer.keryann@gmail.com</a
+                >
+              </li>
             </ul>
           </div>
         </div>
         <div class="footer-bottom">
           <span>© 2026 Recover'N Health</span>
           <span>
-            <a onclick="openLegalModal('mentions')" href="#mentions-legales" style="color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Mentions légales</a>
+            <a
+              onclick="openLegalModal('mentions')"
+              href="#mentions-legales"
+              style="
+                color: inherit;
+                cursor: pointer;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+              "
+              >Mentions légales</a
+            >
             ·
-            <a onclick="openLegalModal('confidentialite')" href="#politique-confidentialite" style="color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Politique de confidentialité</a>
+            <a
+              onclick="openLegalModal('confidentialite')"
+              href="#politique-confidentialite"
+              style="
+                color: inherit;
+                cursor: pointer;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+              "
+              >Politique de confidentialité</a
+            >
           </span>
         </div>
       </footer>
@@ -2593,31 +2725,24 @@
             </div>
           </div>
           <div>
-            <div
+            <img
+              src="assets/M5C_formation.png"
+              alt="Formation massage des 5 continents"
               style="
-                background: linear-gradient(145deg, #d4e8dc, #a8ccb6);
-                border-radius: 20px;
-                height: 320px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: rgba(45, 106, 79, 0.5);
-                font-style: italic;
-                font-size: 0.9rem;
-                flex-direction: column;
-                gap: 12px;
+                width: 85%;
+                height: auto;
+                border-radius: 30px 15px 30px 15px;
+                display: block;
+                margin: 0 auto;
               "
-            >
-              <span style="font-size: 3rem">🎓</span>
-              Photo de formation
-            </div>
+            />
           </div>
         </div>
 
         <!-- Formation cards -->
         <div class="formation-card">
           <div class="formation-card-header">
-            <h3>🌿 Formation Massage Bien-être</h3>
+            <h3><i class="fa-solid fa-spa"></i> Formation Massage Bien-être</h3>
             <p>
               Initiation aux techniques de massage de base pour particuliers et
               professionnels
@@ -2626,17 +2751,19 @@
           <div class="formation-card-body">
             <div class="formation-grid">
               <div class="formation-feature">
-                <div class="icon">📅</div>
+                <div class="icon">
+                  <i class="fa-solid fa-calendar-days"></i>
+                </div>
                 <h4>Durée</h4>
                 <p>1 à 3 jours<br />selon le module</p>
               </div>
               <div class="formation-feature">
-                <div class="icon">👥</div>
+                <div class="icon"><i class="fa-solid fa-users"></i></div>
                 <h4>Format</h4>
                 <p>Individuel ou<br />petit groupe (4 max)</p>
               </div>
               <div class="formation-feature">
-                <div class="icon">📍</div>
+                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
                 <h4>Lieu</h4>
                 <p>À domicile ou<br />lieu à convenir</p>
               </div>
@@ -2689,7 +2816,10 @@
             class="formation-card-header"
             style="background: linear-gradient(135deg, var(--blue), #0d2e42)"
           >
-            <h3>⚡ Formation Massage Sportif & Récupération</h3>
+            <h3>
+              <i class="fa-solid fa-dumbbell"></i> Formation Massage Sportif &
+              Récupération
+            </h3>
             <p>
               Techniques avancées pour les sportifs, coachs et professionnels de
               santé
@@ -2698,17 +2828,21 @@
           <div class="formation-card-body">
             <div class="formation-grid">
               <div class="formation-feature">
-                <div class="icon">📅</div>
+                <div class="icon">
+                  <i class="fa-solid fa-calendar-days"></i>
+                </div>
                 <h4>Durée</h4>
                 <p>2 à 5 jours<br />selon le niveau</p>
               </div>
               <div class="formation-feature">
-                <div class="icon">👥</div>
+                <div class="icon"><i class="fa-solid fa-users"></i></div>
                 <h4>Format</h4>
                 <p>Individuel ou<br />groupe (6 max)</p>
               </div>
               <div class="formation-feature">
-                <div class="icon">🎓</div>
+                <div class="icon">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
                 <h4>Niveau requis</h4>
                 <p>Bases en massage<br />recommandées</p>
               </div>
@@ -2802,6 +2936,18 @@
           <div class="footer-brand">
             <h3>Recover'N Health</h3>
             <p>Massothérapie professionnelle à domicile.</p>
+            <a
+              href="https://www.instagram.com/recover_n_health/"
+              class="insta-link"
+              target="_blank"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                />
+              </svg>
+              @recover_n_health
+            </a>
           </div>
           <div class="footer-section">
             <h4>Navigation</h4>
@@ -2816,18 +2962,48 @@
           <div class="footer-section">
             <h4>Contact</h4>
             <ul>
-              <li><a>📍 Montpellier & alentours</a></li>
-              <li><a>📞 [Numéro à renseigner]</a></li>
-              <li><a>✉️ [Email à renseigner]</a></li>
+              <li>
+                <a
+                  ><i class="fa-solid fa-location-dot"></i> Montpellier &
+                  alentours</a
+                >
+              </li>
+              <li><a>📞 06 41 48 66 68</a></li>
+              <li>
+                <a
+                  ><i class="fa-solid fa-envelope"></i>
+                  ferrer.keryann@gmail.com</a
+                >
+              </li>
             </ul>
           </div>
         </div>
         <div class="footer-bottom">
           <span>© 2026 Recover'N Health</span>
           <span>
-            <a onclick="openLegalModal('mentions')" href="#mentions-legales" style="color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Mentions légales</a>
+            <a
+              onclick="openLegalModal('mentions')"
+              href="#mentions-legales"
+              style="
+                color: inherit;
+                cursor: pointer;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+              "
+              >Mentions légales</a
+            >
             ·
-            <a onclick="openLegalModal('confidentialite')" href="#politique-confidentialite" style="color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Politique de confidentialité</a>
+            <a
+              onclick="openLegalModal('confidentialite')"
+              href="#politique-confidentialite"
+              style="
+                color: inherit;
+                cursor: pointer;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+              "
+              >Politique de confidentialité</a
+            >
           </span>
         </div>
       </footer>
@@ -2851,19 +3027,11 @@
       <section class="about-page">
         <div class="about-grid">
           <div class="about-img-wrapper">
-            <div class="about-img-placeholder">
-              <svg
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-              >
-                <path
-                  d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"
-                  fill="rgba(45,106,79,.35)"
-                />
-              </svg>
-              Photo du praticien
-            </div>
+            <img
+              src="assets/Praticien_massotherapeute_keryann.jpg"
+              alt="Kéryann — massothérapeute à domicile, Montpellier"
+              class="about-img-real"
+            />
             <div class="about-enso"></div>
             <div class="about-stats">
               <div class="stat-box">
@@ -2883,41 +3051,85 @@
 
           <div>
             <span class="section-label">Mon histoire</span>
-            <h2 class="section-title">Une passion, <em>un engagement</em></h2>
+            <h2 class="section-title">Bonjour, <em>moi c'est Kéryann</em></h2>
             <div class="divider"></div>
             <p
               style="
                 font-size: 0.95rem;
                 color: #5a7a68;
                 line-height: 1.8;
-                margin-bottom: 20px;
+                margin-bottom: 18px;
               "
             >
-              [Texte de présentation à personnaliser — parcours, origine,
-              découverte du massage, ce qui m'a amené à cette vocation. Raconter
-              l'histoire qui mêle les racines antillaises et la fascination pour
-              la culture japonaise.]
+              Grand passionné de sport, de voyages et de balades en pleine
+              nature, je suis un véritable amoureux du bien-être et de tout ce
+              que la vie a à nous offrir.
             </p>
             <p
               style="
                 font-size: 0.95rem;
                 color: #5a7a68;
                 line-height: 1.8;
-                margin-bottom: 28px;
+                margin-bottom: 18px;
               "
             >
-              [Suite du parcours — formations suivies, expériences acquises,
-              décision de se lancer en tant qu'indépendant, choix du service à
-              domicile pour plus de confort et de personnalisation.]
+              C'est mon propre cheminement, entre défis de santé, recherche de
+              performance sportive et quête d'équilibre qui m'a naturellement
+              guidé vers la massothérapie. J'y ai trouvé bien plus qu'une
+              pratique : une approche holistique indispensable pour aligner le
+              corps et l'esprit.
+            </p>
+            <p
+              style="
+                font-size: 0.95rem;
+                color: #5a7a68;
+                line-height: 1.8;
+                margin-bottom: 18px;
+              "
+            >
+              Fort de cette expérience, je vous accompagne aujourd'hui à travers
+              des soins sur mesure. Que vous ayez besoin d'un massage axé sur la
+              santé, la récupération sportive ou le rééquilibrage énergétique,
+              je vous propose un véritable suivi personnalisé pour répondre à
+              vos besoins.
+            </p>
+            <p
+              style="
+                font-size: 0.95rem;
+                color: #5a7a68;
+                line-height: 1.8;
+                margin-bottom: 18px;
+              "
+            >
+              Parce que transmettre a toujours été une seconde nature chez moi,
+              j'ai également choisi de développer le volet formation. Si vous
+              souhaitez apprendre la massothérapie ou découvrir de nouvelles
+              méthodes de massage, je serai ravi de vous accompagner sur cette
+              voie.
+            </p>
+            <p
+              style="
+                font-size: 0.93rem;
+                color: var(--gold);
+                line-height: 1.8;
+                margin-bottom: 28px;
+                font-style: italic;
+              "
+            >
+              Voilà, vous savez presque tout sur moi ! Le reste, nous en
+              discuterons lors de votre prochain rendez-vous... du moins, si
+              vous ne vous endormez pas sur la table d'ici là !
             </p>
 
             <div class="certifications">
               <h4>Certifications & formations</h4>
               <ul class="cert-list">
-                <li>[Certification / diplôme n°1 à renseigner]</li>
-                <li>[Certification / diplôme n°2 à renseigner]</li>
-                <li>[Certification / diplôme n°3 à renseigner]</li>
-                <li>[Formation spécialisée à renseigner]</li>
+                <li>
+                  Diplôme Praticien et Formateur — Massage des 5 continents
+                  (M5C) en Massothérapie
+                </li>
+                <li>Certification à la pratique du drainage lymphatique</li>
+                <li>Diplôme Praticien et Formateur — Belly Revolution</li>
               </ul>
             </div>
           </div>
@@ -2932,14 +3144,14 @@
         </div>
         <div class="values-grid">
           <div class="value-card">
-            <span class="icon">🌺</span>
-            <h4>Chaleur antillaise</h4>
+            <span class="icon"><i class="fa-solid fa-sun"></i></span>
+            <h4>Chaleur des îles</h4>
             <p>
               L'accueil, la douceur et la générosité au cœur de chaque soin.
             </p>
           </div>
           <div class="value-card">
-            <span class="icon">⛩️</span>
+            <span class="icon"><i class="fa-solid fa-yin-yang"></i></span>
             <h4>Rigueur zen</h4>
             <p>
               La précision, la présence totale et le respect du corps inspirés
@@ -2947,7 +3159,7 @@
             </p>
           </div>
           <div class="value-card">
-            <span class="icon">🤝</span>
+            <span class="icon"><i class="fa-solid fa-handshake"></i></span>
             <h4>Personnalisation</h4>
             <p>
               Chaque corps est unique. Chaque séance est adaptée à vos besoins
@@ -2955,7 +3167,7 @@
             </p>
           </div>
           <div class="value-card">
-            <span class="icon">🏡</span>
+            <span class="icon"><i class="fa-solid fa-house"></i></span>
             <h4>Confort absolu</h4>
             <p>
               Je me déplace chez vous pour que vous n'ayez aucun effort à faire.
@@ -2977,6 +3189,18 @@
             <p>
               Massothérapie professionnelle à domicile. Montpellier & alentours.
             </p>
+            <a
+              href="https://www.instagram.com/recover_n_health/"
+              class="insta-link"
+              target="_blank"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                />
+              </svg>
+              @recover_n_health
+            </a>
           </div>
           <div class="footer-section">
             <h4>Navigation</h4>
@@ -2991,18 +3215,48 @@
           <div class="footer-section">
             <h4>Contact</h4>
             <ul>
-              <li><a>📍 Montpellier & alentours</a></li>
-              <li><a>📞 [Numéro à renseigner]</a></li>
-              <li><a>✉️ [Email à renseigner]</a></li>
+              <li>
+                <a
+                  ><i class="fa-solid fa-location-dot"></i> Montpellier &
+                  alentours</a
+                >
+              </li>
+              <li><a>📞 06 41 48 66 68</a></li>
+              <li>
+                <a
+                  ><i class="fa-solid fa-envelope"></i>
+                  ferrer.keryann@gmail.com</a
+                >
+              </li>
             </ul>
           </div>
         </div>
         <div class="footer-bottom">
           <span>© 2026 Recover'N Health</span>
           <span>
-            <a onclick="openLegalModal('mentions')" href="#mentions-legales" style="color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Mentions légales</a>
+            <a
+              onclick="openLegalModal('mentions')"
+              href="#mentions-legales"
+              style="
+                color: inherit;
+                cursor: pointer;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+              "
+              >Mentions légales</a
+            >
             ·
-            <a onclick="openLegalModal('confidentialite')" href="#politique-confidentialite" style="color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Politique de confidentialité</a>
+            <a
+              onclick="openLegalModal('confidentialite')"
+              href="#politique-confidentialite"
+              style="
+                color: inherit;
+                cursor: pointer;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+              "
+              >Politique de confidentialité</a
+            >
           </span>
         </div>
       </footer>
@@ -3028,12 +3282,7 @@
           <!-- Formulaire de réservation — connecté N8N -->
           <div>
             <div class="calendar-placeholder" id="booking-form-wrapper">
-              <h3>
-                Demande de réservation
-                <span class="cal-logo-badge" style="background: var(--green)"
-                  >N8N</span
-                >
-              </h3>
+              <h3>Demande de réservation</h3>
 
               <!-- ÉTAPE 1 : Soin + Date/Heure -->
               <div id="booking-step-1">
@@ -3070,9 +3319,6 @@
                     <option value="Réflexologie plantaire 1h — 80€">
                       Réflexologie plantaire 1h — 80€
                     </option>
-                    <option value="Massage crânien — 1h — 70€">
-                      Massage crânien — 1h — 70€
-                    </option>
                     <option value="Drainage lymphatique — 1h — 85€">
                       Drainage lymphatique — 1h — 85€
                     </option>
@@ -3080,6 +3326,149 @@
                       Massage extérieur plage/rivière — 2h — 120€
                     </option>
                   </select>
+                </div>
+
+                <!-- Électrostimulation option -->
+                <div
+                  class="form-group"
+                  style="
+                    margin-bottom: 20px;
+                    background: rgba(45, 106, 79, 0.04);
+                    border-radius: 12px;
+                    padding: 16px;
+                  "
+                >
+                  <label
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 8px;
+                      flex-wrap: wrap;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    Souhaitez-vous ajouter l'électrostimulation ?
+                    <span
+                      onclick="openHealyModal()"
+                      style="
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 4px;
+                        background: rgba(45, 106, 79, 0.12);
+                        color: var(--green);
+                        font-size: 0.72rem;
+                        padding: 2px 10px;
+                        border-radius: 20px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        user-select: none;
+                        -webkit-tap-highlight-color: transparent;
+                      "
+                    >
+                      ℹ️ Healy · +10 ou +20€
+                    </span>
+                  </label>
+                  <div style="display: flex; gap: 24px; margin-bottom: 12px">
+                    <label
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        font-weight: 400;
+                        cursor: pointer;
+                      "
+                    >
+                      <input
+                        type="radio"
+                        name="electrostim"
+                        value="non"
+                        checked
+                        onchange="toggleElectrostim(this)"
+                      />
+                      Non
+                    </label>
+                    <label
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        font-weight: 400;
+                        cursor: pointer;
+                      "
+                    >
+                      <input
+                        type="radio"
+                        name="electrostim"
+                        value="oui"
+                        onchange="toggleElectrostim(this)"
+                      />
+                      Oui
+                    </label>
+                  </div>
+                  <div id="electrostim-programs" style="display: none">
+                    <select id="rdv-electrostim-prog">
+                      <option value="">
+                        — Choisissez un programme Healy —
+                      </option>
+                      <optgroup label="Beauté / Peau">
+                        <option>Système impureté de la peau</option>
+                        <option>Harmonie Système de cicatrisation</option>
+                      </optgroup>
+                      <optgroup label="Douleur / Psyché">
+                        <option>Douleur chronique</option>
+                        <option>Lombalgie chronique</option>
+                        <option>Bucco-dentaire local</option>
+                        <option>Articulation local</option>
+                        <option>Migraine</option>
+                        <option>Insomnie</option>
+                        <option>Dépression</option>
+                        <option>Anxiété</option>
+                      </optgroup>
+                      <optgroup label="Méridiens">
+                        <option>Côlon</option>
+                        <option>Intestin grêle</option>
+                        <option>Vésicule biliaire</option>
+                        <option>Articulations</option>
+                        <option>Cœur</option>
+                        <option>Équilibre hormonal</option>
+                        <option>Circulation</option>
+                        <option>Foie</option>
+                        <option>Poumons</option>
+                        <option>Système lymphatique</option>
+                        <option>Estomac</option>
+                        <option>Rate pancréas</option>
+                        <option>Nerfs Méridiens</option>
+                        <option>Rein</option>
+                        <option>Organes Méridiens</option>
+                      </optgroup>
+                      <optgroup label="Cycles profonds">
+                        <option>Digestion complète</option>
+                        <option>Sérénité</option>
+                      </optgroup>
+                      <optgroup label="Travail / Sommeil">
+                        <option>Sommeil syst.</option>
+                        <option>Repos au lit</option>
+                        <option>Sommeil équilibré</option>
+                        <option>Flux léger</option>
+                      </optgroup>
+                      <optgroup label="Harmonie biogénétique">
+                        <option>Harmonie gastro-intestinal</option>
+                        <option>Harmonie foie</option>
+                        <option>Harmonie poumons</option>
+                        <option>Harmonie glande thyroïde</option>
+                        <option>Harmonie nerf sciatique local</option>
+                        <option>Système immunitaire</option>
+                        <option>Harmonie des yeux</option>
+                        <option>Harmonie hormones</option>
+                        <option>Harmonie intestins</option>
+                        <option>Circulation</option>
+                      </optgroup>
+                      <optgroup label="Équilibre mental">
+                        <option>Bien-être émot.</option>
+                        <option>Bien-être syst.</option>
+                      </optgroup>
+                    </select>
+                  </div>
                 </div>
 
                 <div class="form-row">
@@ -3176,7 +3565,8 @@
                     color: var(--dark);
                   "
                 >
-                  📍 <strong>Hors agglomération de Montpellier</strong> — un
+                  <i class="fa-solid fa-location-dot"></i>
+                  <strong>Hors agglomération de Montpellier</strong> — un
                   supplément de 20€ sera appliqué.
                 </div>
 
@@ -3190,9 +3580,25 @@
                 </div>
 
                 <!-- Honeypot anti-bot : invisible pour les humains, rempli automatiquement par les bots -->
-                <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;">
+                <div
+                  aria-hidden="true"
+                  style="
+                    position: absolute;
+                    left: -9999px;
+                    top: -9999px;
+                    width: 1px;
+                    height: 1px;
+                    overflow: hidden;
+                  "
+                >
                   <label for="rdv-website">Ne pas remplir ce champ</label>
-                  <input type="text" id="rdv-website" name="website" tabindex="-1" autocomplete="off" />
+                  <input
+                    type="text"
+                    id="rdv-website"
+                    name="website"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
                 </div>
 
                 <!-- Message d'erreur -->
@@ -3235,7 +3641,15 @@
                 id="booking-success"
                 style="display: none; text-align: center; padding: 40px 20px"
               >
-                <div style="font-size: 3rem; margin-bottom: 16px">🌿</div>
+                <div
+                  style="
+                    font-size: 3rem;
+                    margin-bottom: 16px;
+                    color: var(--green);
+                  "
+                >
+                  <i class="fa-solid fa-spa"></i>
+                </div>
                 <h3
                   style="
                     font-family: &quot;Cormorant Garamond&quot;, serif;
@@ -3372,34 +3786,42 @@
             <div class="info-box">
               <h4>Infos pratiques</h4>
               <div class="info-item">
-                <span class="icon">📍</span>
+                <span class="icon"
+                  ><i class="fa-solid fa-location-dot"></i
+                ></span>
                 <p>
                   <strong>Zone d'intervention</strong><br />Montpellier &
                   métropole<br />+20€ hors agglomération
                 </p>
               </div>
               <div class="info-item">
-                <span class="icon">⏱</span>
+                <span class="icon"><i class="fa-solid fa-clock"></i></span>
                 <p>
                   <strong>Délai de réponse</strong><br />Confirmation sous 24h
                 </p>
               </div>
               <div class="info-item">
-                <span class="icon">🕐</span>
+                <span class="icon"
+                  ><i class="fa-solid fa-calendar-check"></i
+                ></span>
                 <p><strong>Disponibilités</strong><br />7j/7, de 8h à 20h</p>
               </div>
               <div class="info-item">
-                <span class="icon">💳</span>
+                <span class="icon"
+                  ><i class="fa-solid fa-credit-card"></i
+                ></span>
                 <p>
-                  <strong>Paiement</strong><br />Espèces, virement, CB<br />(à
-                  confirmer)
+                  <strong>Paiement</strong><br />Espèces, virement, CB<br />
                 </p>
               </div>
               <div class="info-item">
-                <span class="icon">📦</span>
+                <span class="icon"
+                  ><i class="fa-solid fa-briefcase-medical"></i
+                ></span>
                 <p>
-                  <strong>Matériel</strong><br />Tout le matériel professionnel
-                  est apporté par le praticien
+                  <strong>Matériel</strong><br />Le praticien se déplace avec
+                  tout le matériel nécessaire à votre soin. De votre côté,
+                  prévoyez simplement une grande et une petite serviette.
                 </p>
               </div>
             </div>
@@ -3414,6 +3836,18 @@
             <p>
               Massothérapie professionnelle à domicile. Montpellier & alentours.
             </p>
+            <a
+              href="https://www.instagram.com/recover_n_health/"
+              class="insta-link"
+              target="_blank"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                />
+              </svg>
+              @recover_n_health
+            </a>
           </div>
           <div class="footer-section">
             <h4>Navigation</h4>
@@ -3428,32 +3862,134 @@
           <div class="footer-section">
             <h4>Contact</h4>
             <ul>
-              <li><a>📍 Montpellier & alentours</a></li>
-              <li><a>📞 [Numéro à renseigner]</a></li>
-              <li><a>✉️ [Email à renseigner]</a></li>
+              <li>
+                <a
+                  ><i class="fa-solid fa-location-dot"></i> Montpellier &
+                  alentours</a
+                >
+              </li>
+              <li><a>📞 06 41 48 66 68</a></li>
+              <li>
+                <a
+                  ><i class="fa-solid fa-envelope"></i>
+                  ferrer.keryann@gmail.com</a
+                >
+              </li>
             </ul>
           </div>
         </div>
         <div class="footer-bottom">
           <span>© 2026 Recover'N Health</span>
           <span>
-            <a onclick="openLegalModal('mentions')" href="#mentions-legales" style="color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Mentions légales</a>
+            <a
+              onclick="openLegalModal('mentions')"
+              href="#mentions-legales"
+              style="
+                color: inherit;
+                cursor: pointer;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+              "
+              >Mentions légales</a
+            >
             ·
-            <a onclick="openLegalModal('confidentialite')" href="#politique-confidentialite" style="color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Politique de confidentialité</a>
+            <a
+              onclick="openLegalModal('confidentialite')"
+              href="#politique-confidentialite"
+              style="
+                color: inherit;
+                cursor: pointer;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+              "
+              >Politique de confidentialité</a
+            >
           </span>
         </div>
       </footer>
     </div>
 
     <!-- =====================================================
+         MODALE — HEALY (ÉLECTROSTIMULATION)
+    ====================================================== -->
+    <div
+      class="legal-modal-overlay"
+      id="healy-modal-overlay"
+      onclick="closeHealyModal(event)"
+    >
+      <div class="legal-modal" style="max-width: 480px">
+        <div class="legal-modal-header">
+          <h2 class="legal-modal-title">⚡ Technologie Healy</h2>
+          <button class="legal-modal-close" onclick="closeHealyModal()">
+            ✕
+          </button>
+        </div>
+        <div
+          class="legal-modal-body"
+          style="font-size: 0.9rem; line-height: 1.7"
+        >
+          <p>
+            L'électrostimulation via le programme Healy utilise de très faibles
+            courants électriques (microcourants) diffusés à travers le corps.
+            Cette technique vise à favoriser la relaxation, le bien-être et
+            l'équilibre global en s'appuyant sur des fréquences spécifiques.
+            Elle est proposée en complément des soins manuels et ne remplace pas
+            un suivi médical.
+          </p>
+          <p style="margin-top: 12px">
+            <strong>Tarif :</strong> +10€ ou +20€ en supplément du massage,
+            selon le programme sélectionné.
+          </p>
+          <p style="margin-top: 12px; font-weight: 600; color: var(--green)">
+            Catégories disponibles :
+          </p>
+          <ul style="margin: 8px 0 0 16px; padding: 0">
+            <li>Beauté / Peau</li>
+            <li>Douleur / Psyché</li>
+            <li>Méridiens</li>
+            <li>Cycles profonds</li>
+            <li>Travail / Sommeil</li>
+            <li>Harmonie biogénétique</li>
+            <li>Équilibre mental</li>
+          </ul>
+          <p
+            style="
+              margin-top: 14px;
+              font-size: 0.8rem;
+              color: rgba(45, 106, 79, 0.6);
+              font-style: italic;
+            "
+          >
+            Le programme exact sera précisé lors de votre sélection dans le
+            formulaire.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================
          MODALE — MENTIONS LÉGALES & POLITIQUE DE CONFIDENTIALITÉ
     ====================================================== -->
-    <div class="legal-modal-overlay" id="legal-modal-overlay" onclick="closeLegalModal(event)">
-      <div class="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
-
+    <div
+      class="legal-modal-overlay"
+      id="legal-modal-overlay"
+      onclick="closeLegalModal(event)"
+    >
+      <div
+        class="legal-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="legal-modal-title"
+      >
         <div class="legal-modal-header">
           <h2 id="legal-modal-title">Mentions légales</h2>
-          <button class="legal-modal-close" onclick="closeLegalModalDirect()" aria-label="Fermer">×</button>
+          <button
+            class="legal-modal-close"
+            onclick="closeLegalModalDirect()"
+            aria-label="Fermer"
+          >
+            ×
+          </button>
         </div>
 
         <div class="legal-modal-body" id="legal-modal-body">
@@ -3461,9 +3997,9 @@
         </div>
 
         <div class="legal-modal-footer">
-          Document conforme à la loi n°2004-575 (LCEN) et au Règlement (UE) 2016/679 (RGPD) · Dernière mise à jour : 2026
+          Document conforme à la loi n°2004-575 (LCEN) et au Règlement (UE)
+          2016/679 (RGPD) · Dernière mise à jour : 2026
         </div>
-
       </div>
     </div>
 
@@ -3473,32 +4009,31 @@
       // ══════════════════════════════════════════════
 
       const LEGAL_CONTENT = {
-
         mentions: {
-          title: 'Mentions légales',
+          title: "Mentions légales",
           html: `
             <h3>1. Éditeur du site</h3>
             <p>
               Le présent site web est édité par :<br><br>
-              <strong>Nom :</strong> <span class="legal-placeholder">[PRÉNOM NOM]</span><br>
+              <strong>Nom :</strong> <span class="legal-placeholder">Keryann FERRER</span><br>
               <strong>Statut :</strong> Auto-entrepreneur (Micro-entrepreneur)<br>
               <strong>Numéro SIRET :</strong> <span class="legal-placeholder">[SIRET à renseigner]</span><br>
               <strong>Adresse :</strong> <span class="legal-placeholder">[ADRESSE COMPLÈTE]</span><br>
-              <strong>Téléphone :</strong> <span class="legal-placeholder">[NUMÉRO DE TÉLÉPHONE]</span><br>
-              <strong>Email :</strong> <span class="legal-placeholder">[ADRESSE EMAIL]</span>
+              <strong>Téléphone :</strong> <span class="legal-placeholder">06 41 48 66 68</span><br>
+              <strong>Email :</strong> <span class="legal-placeholder">ferrer.keryann@gmail.com</span>
             </p>
 
             <h3>2. Responsable de la publication</h3>
             <p>
-              Le responsable de la publication est <span class="legal-placeholder">[PRÉNOM NOM]</span>, en qualité d'auto-entrepreneur.
+              Le responsable de la publication est <span class="legal-placeholder">Keryann FERRER</span>, en qualité d'auto-entrepreneur.
             </p>
 
             <h3>3. Hébergement</h3>
             <p>
               Ce site est hébergé par :<br><br>
-              <strong>Hébergeur :</strong> <span class="legal-placeholder">[NOM DE L'HÉBERGEUR]</span><br>
+              <strong>Hébergeur :</strong> <span class="legal-placeholder">Hostinger</span><br>
               <strong>Adresse :</strong> <span class="legal-placeholder">[ADRESSE DE L'HÉBERGEUR]</span><br>
-              <strong>Site web :</strong> <span class="legal-placeholder">[URL DE L'HÉBERGEUR]</span>
+              <strong>Site web :</strong> <span class="legal-placeholder">https://www.hostinger.com/</span>
             </p>
 
             <h3>4. Activité exercée</h3>
@@ -3529,17 +4064,17 @@
             <p>
               Le présent site et ses mentions légales sont soumis au droit français. Tout litige relève de la compétence exclusive des tribunaux compétents du ressort de Montpellier.
             </p>
-          `
+          `,
         },
 
         confidentialite: {
-          title: 'Politique de confidentialité',
+          title: "Politique de confidentialité",
           html: `
             <h3>1. Responsable du traitement</h3>
             <p>
-              <span class="legal-placeholder">[PRÉNOM NOM]</span>, auto-entrepreneur opérant sous le nom commercial <strong>Recover'N Health</strong>,
+              <span class="legal-placeholder">Keryann FERRER</span>, auto-entrepreneur opérant sous le nom commercial <strong>Recover'N Health</strong>,
               est responsable du traitement des données personnelles collectées via ce site.<br>
-              Contact : <span class="legal-placeholder">[ADRESSE EMAIL]</span>
+              Contact : <span class="legal-placeholder">ferrer.keryann@gmail.com</span>
             </p>
 
             <h3>2. Données collectées</h3>
@@ -3570,7 +4105,7 @@
 
             <h3>5. Destinataires des données</h3>
             <p>
-              Vos données sont traitées uniquement par <span class="legal-placeholder">[PRÉNOM NOM]</span> dans le cadre de son activité.
+              Vos données sont traitées uniquement par <span class="legal-placeholder">Keryann FERRER</span> dans le cadre de son activité.
               Elles peuvent transiter via <strong>N8N</strong> (outil d'automatisation utilisé pour la gestion des demandes),
               hébergé sur <span class="legal-placeholder">[SERVEUR N8N — préciser si cloud ou auto-hébergé]</span>.
               Elles ne sont jamais vendues ni transmises à des tiers à des fins commerciales.
@@ -3613,38 +4148,54 @@
             <p>
               Cette politique de confidentialité peut être mise à jour à tout moment pour refléter des changements légaux ou dans la pratique. La date de dernière modification est indiquée en bas de cette page. Il est conseillé de la consulter régulièrement.
             </p>
-          `
-        }
+          `,
+        },
       };
 
+      function openHealyModal() {
+        const overlay = document.getElementById("healy-modal-overlay");
+        overlay.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeHealyModal(e) {
+        if (e && e.target !== document.getElementById("healy-modal-overlay"))
+          return;
+        const overlay = document.getElementById("healy-modal-overlay");
+        overlay.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeHealyModal();
+      });
+
       function openLegalModal(doc) {
-        const overlay = document.getElementById('legal-modal-overlay');
-        const title   = document.getElementById('legal-modal-title');
-        const body    = document.getElementById('legal-modal-body');
+        const overlay = document.getElementById("legal-modal-overlay");
+        const title = document.getElementById("legal-modal-title");
+        const body = document.getElementById("legal-modal-body");
         const content = LEGAL_CONTENT[doc];
         if (!content) return;
         title.textContent = content.title;
-        body.innerHTML    = content.html;
-        body.scrollTop    = 0;
-        overlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
+        body.innerHTML = content.html;
+        body.scrollTop = 0;
+        overlay.classList.add("open");
+        document.body.style.overflow = "hidden";
       }
 
       function closeLegalModalDirect() {
-        document.getElementById('legal-modal-overlay').classList.remove('open');
-        document.body.style.overflow = '';
+        document.getElementById("legal-modal-overlay").classList.remove("open");
+        document.body.style.overflow = "";
       }
 
       function closeLegalModal(e) {
         // Ferme uniquement si clic sur l'overlay (fond sombre), pas sur la modale elle-même
-        if (e.target === document.getElementById('legal-modal-overlay')) {
+        if (e.target === document.getElementById("legal-modal-overlay")) {
           closeLegalModalDirect();
         }
       }
 
       // Fermeture avec la touche Échap
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeLegalModalDirect();
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeLegalModalDirect();
       });
 
       // ── Sécurité : échappe les caractères HTML pour éviter les injections XSS ──
@@ -3771,22 +4322,33 @@
         const email = document.getElementById("rdv-email").value.trim();
         const adresse = document.getElementById("rdv-adresse").value.trim();
         const notes = document.getElementById("rdv-notes").value.trim();
+        const electrostimRadio = document.querySelector(
+          'input[name="electrostim"]:checked',
+        );
+        const electrostim = electrostimRadio ? electrostimRadio.value : "non";
+        const electrostimProg =
+          electrostim === "oui"
+            ? document.getElementById("rdv-electrostim-prog").value ||
+              "Non précisé"
+            : null;
 
         // ── Vérification honeypot : si rempli → c'est un bot, on bloque silencieusement ──
-        const honeypot = document.getElementById('rdv-website');
+        const honeypot = document.getElementById("rdv-website");
         if (honeypot && honeypot.value.length > 0) {
           // Simule un succès pour ne pas alerter le bot
-          document.getElementById('booking-step-1').style.display = 'none';
-          document.getElementById('booking-success').style.display = 'block';
+          document.getElementById("booking-step-1").style.display = "none";
+          document.getElementById("booking-success").style.display = "block";
           return;
         }
 
         // ── Rate limiting : empêche les soumissions trop rapides ──
         const now = Date.now();
         if (now - lastSubmitTime < RATE_LIMIT_MS) {
-          const reste = Math.ceil((RATE_LIMIT_MS - (now - lastSubmitTime)) / 1000);
+          const reste = Math.ceil(
+            (RATE_LIMIT_MS - (now - lastSubmitTime)) / 1000,
+          );
           errorDiv.textContent = `⏳ Merci de patienter ${reste} seconde(s) avant de renvoyer une demande.`;
-          errorDiv.style.display = 'block';
+          errorDiv.style.display = "block";
           return;
         }
 
@@ -3814,10 +4376,30 @@
 
         // ── Validation de longueur : limite les champs texte pour bloquer les payloads anormaux ──
         const LIMITS = { nom: 100, adresse: 200, notes: 1000, email: 150 };
-        if (nom.length     > LIMITS.nom)     { errorDiv.textContent = '⚠️ Le nom est trop long (100 caractères max).';     errorDiv.style.display = 'block'; return; }
-        if (email.length   > LIMITS.email)   { errorDiv.textContent = '⚠️ L\'email est trop long (150 caractères max).';   errorDiv.style.display = 'block'; return; }
-        if (adresse.length > LIMITS.adresse) { errorDiv.textContent = '⚠️ L\'adresse est trop longue (200 caractères max).'; errorDiv.style.display = 'block'; return; }
-        if (notes.length   > LIMITS.notes)   { errorDiv.textContent = '⚠️ Les notes sont trop longues (1000 caractères max).'; errorDiv.style.display = 'block'; return; }
+        if (nom.length > LIMITS.nom) {
+          errorDiv.textContent =
+            "⚠️ Le nom est trop long (100 caractères max).";
+          errorDiv.style.display = "block";
+          return;
+        }
+        if (email.length > LIMITS.email) {
+          errorDiv.textContent =
+            "⚠️ L'email est trop long (150 caractères max).";
+          errorDiv.style.display = "block";
+          return;
+        }
+        if (adresse.length > LIMITS.adresse) {
+          errorDiv.textContent =
+            "⚠️ L'adresse est trop longue (200 caractères max).";
+          errorDiv.style.display = "block";
+          return;
+        }
+        if (notes.length > LIMITS.notes) {
+          errorDiv.textContent =
+            "⚠️ Les notes sont trop longues (1000 caractères max).";
+          errorDiv.style.display = "block";
+          return;
+        }
 
         // Détection hors zone
         const adresseLower = adresse.toLowerCase();
@@ -3846,6 +4428,8 @@
           email,
           adresse,
           notes: notes || "(aucune)",
+          electrostimulation:
+            electrostim === "oui" ? `Oui — ${electrostimProg}` : "Non",
           hors_zone: horsZone,
           supplement_deplacement: horsZone ? "20€" : "0€",
           source: "site-web-rnh",
@@ -3870,13 +4454,13 @@
           // Succès — afficher le récap
           const recap = document.getElementById("rdv-recap");
           recap.innerHTML = `
-            <div style="margin-bottom:8px; font-weight:500; color:var(--green);">📋 Récapitulatif de votre demande</div>
+            <div style="margin-bottom:8px; font-weight:500; color:var(--green);"><i class="fa-solid fa-clipboard-list"></i> Récapitulatif de votre demande</div>
             <div style="display:grid; gap:6px;">
-              <div>🌿 <strong>Soin :</strong> ${escapeHtml(soin)}</div>
-              <div>📅 <strong>Date :</strong> ${escapeHtml(dateFr)} à ${escapeHtml(heure)}</div>
-              <div>👤 <strong>Nom :</strong> ${escapeHtml(nom)}</div>
-              <div>📍 <strong>Adresse :</strong> ${escapeHtml(adresse)}</div>
-              ${horsZone ? '<div style="color:var(--gold);">⚠️ <strong>Supplément déplacement :</strong> +20€</div>' : ""}
+              <div><i class="fa-solid fa-spa" style="color:var(--green)"></i> <strong>Soin :</strong> ${escapeHtml(soin)}</div>
+              <div><i class="fa-solid fa-calendar-days" style="color:var(--green)"></i> <strong>Date :</strong> ${escapeHtml(dateFr)} à ${escapeHtml(heure)}</div>
+              <div><i class="fa-solid fa-user" style="color:var(--green)"></i> <strong>Nom :</strong> ${escapeHtml(nom)}</div>
+              <div><i class="fa-solid fa-location-dot" style="color:var(--green)"></i> <strong>Adresse :</strong> ${escapeHtml(adresse)}</div>
+              ${horsZone ? '<div style="color:var(--gold);"><i class="fa-solid fa-triangle-exclamation"></i> <strong>Supplément déplacement :</strong> +20€</div>' : ""}
             </div>
           `;
 
@@ -3904,6 +4488,13 @@
         document.getElementById("rdv-email").value = "";
         document.getElementById("rdv-adresse").value = "";
         document.getElementById("rdv-notes").value = "";
+        // Réinitialisation électrostimulation
+        const radioNon = document.querySelector(
+          'input[name="electrostim"][value="non"]',
+        );
+        if (radioNon) radioNon.checked = true;
+        document.getElementById("electrostim-programs").style.display = "none";
+        document.getElementById("rdv-electrostim-prog").value = "";
         // Réinitialisation du bandeau hors-zone et du message d'erreur
         document.getElementById("rdv-hors-zone-notice").style.display = "none";
         const errorDiv = document.getElementById("rdv-error");
@@ -3913,6 +4504,14 @@
         btn.textContent = "Envoyer ma demande de réservation →";
         btn.disabled = false;
         btn.style.opacity = "1";
+      }
+
+      function toggleElectrostim(radio) {
+        const programs = document.getElementById("electrostim-programs");
+        programs.style.display = radio.value === "oui" ? "block" : "none";
+        if (radio.value === "non") {
+          document.getElementById("rdv-electrostim-prog").value = "";
+        }
       }
 
       // ══════════════════════════════════════════════
